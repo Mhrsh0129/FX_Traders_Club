@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FX Traders Club – Trading Signals, Investments &amp; Tools</title>
+<meta name="description" content="Forex signals, US and EU stocks, mutual funds, indices, indicators and trading bots.">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+<noscript><style>.intro .nav,.intro main,.intro footer{opacity:1}#intro,.fly{display:none}.intro{overflow:auto}</style></noscript>
+</head>
+<body class="intro">
+<div id="intro"></div><div class="fly" id="lg"></div>
+<header class="nav">
+  <a class="slot" id="slot" href="#top" aria-label="FX Traders Club home"></a>
+  <div class="right">
+    <nav class="links"><a href="#services">What we do</a><a href="#products">Products</a><a href="#goals">Goals</a><a href="../Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html">Intro</a></nav>
+    <a class="btn primary" href="login.html">Login</a>
+    <button id="theme" class="icon" type="button" title="Light / Dark mode"></button>
+  </div>
+</header>
+<main id="top">
+  <div class="hero"><div class="wrap">
+    <h1>Trade smarter.<br>Invest with confidence.</h1>
+    <p class="lead">FX Traders Club brings Forex signals, global investment options and ready-to-use trading tools together in one place.</p>
+    <div class="cta"><a class="btn primary" href="login.html">Log in to explore</a><a class="btn" href="login.html#signup">Sign up</a></div>
+  </div></div>
+  <section id="services"><div class="wrap">
+    <h2>What we do</h2><p class="muted">Services for traders and investors, from short-term Forex to long-term portfolios.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Signals</span><h3>Forex Trading Signals</h3><p>Timely trade ideas for the Forex market.</p></div>
+      <div class="card"><span class="tag">Stocks</span><h3>US &amp; EU Stocks</h3><p>Investment options across US and European equity markets.</p></div>
+      <div class="card"><span class="tag">Investing</span><h3>Mutual Funds &amp; Indices</h3><p>Investment routes for building a long-term portfolio.</p></div>
+    </div>
+  </div></section>
+  <section id="products" class="alt"><div class="wrap">
+    <h2>Our products</h2><p class="muted">Tools that help you trade with more clarity and less effort.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Indicators</span><h3>Trading Indicators</h3><p>Chart indicators that turn market data into clear, readable signals.</p></div>
+      <div class="card"><span class="tag">Automation</span><h3>Trading Bots</h3><p>Automated systems that run a strategy for you, around the clock.</p></div>
+    </div>
+  </div></section>
+  <section id="goals"><div class="wrap">
+    <h2>Our goals</h2><p class="muted">What we are building FX Traders Club to do.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">01</span><h3>Open up the markets</h3><p>Make Forex and global investing easier to approach.</p></div>
+      <div class="card"><span class="tag">02</span><h3>Keep it clear</h3><p>Simple signals, plain explanations, no noise.</p></div>
+      <div class="card"><span class="tag">03</span><h3>Save you time</h3><p>Tools and automation that work while you focus elsewhere.</p></div>
+    </div>
+  </div></section>
+  <section class="alt lock"><div class="wrap">
+    <h2>Want the full picture?</h2>
+    <p class="lead">Signal details, product information and plans are available to members. Log in or create an account to see everything.</p>
+    <div class="cta"><a class="btn primary" href="login.html">Login</a><a class="btn" href="login.html#signup">Sign up</a></div>
+  </div></section>
+</main>
+<footer><div class="wrap footer-wrap">
+  <p>© FX Traders Club. Trading and investing involve risk, including the loss of capital. Past performance does not guarantee future results. Nothing on this site is personal financial advice.</p>
+  <div class="footer-links">
+    <a href="../Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html">▶ Replay Intro</a>
+    <a href="login.html">Login</a>
+    <a href="login.html#signup">Sign up</a>
+  </div>
+</div></footer>
+<script>
+(async()=>{
+  const b=document.body,slot=document.getElementById('slot'),H=FXLogo.H;
+  let seen=false;try{seen=sessionStorage.getItem('fxIntro')&&!location.search.includes('play')}catch(e){}
+  const done=()=>{b.classList.remove('intro');['intro','lg'].forEach(i=>{const n=document.getElementById(i);n&&n.remove()})};
+  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){await FXLogo.nav(slot);return done()}
+  try{
+    const host=document.getElementById('lg'),ov=document.getElementById('intro');
+    const o=await FXLogo.mount(host,true);
+    const w=Math.min(innerWidth*.82,860),h=w*o.vbH/o.vbW;
+    Object.assign(host.style,{width:w+'px',left:(innerWidth-w)/2+'px',top:(innerHeight-h)/2+'px'});
+    slot.style.width=H*o.vbW/o.vbH+'px';slot.style.height=H+'px';
+    await o.play();await new Promise(r=>setTimeout(r,450));
+    const a=host.getBoundingClientRect(),s=slot.getBoundingClientRect();
+    b.classList.remove('intro');
+    ov.animate([{opacity:1},{opacity:0}],{duration:1000,fill:'forwards'});
+    await host.animate([{transform:'none'},{transform:'translate('+(s.left-a.left)+'px,'+(s.top-a.top)+'px) scale('+s.width/a.width+')'}],{duration:1100,easing:'cubic-bezier(.65,0,.35,1)',fill:'forwards'}).finished;
+    slot.appendChild(o.svg);done();
+    try{sessionStorage.setItem('fxIntro','1')}catch(e){}
+  }catch(e){slot.innerHTML='';await FXLogo.nav(slot);done()}
+})();
+</script>
+</body>
+</html>

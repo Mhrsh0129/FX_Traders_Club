@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Login – FX Traders Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body>
+<header class="nav">
+  <a class="slot" id="slot" href="index.html" aria-label="FX Traders Club home"></a>
+  <div class="right">
+    <nav class="links"><a href="index.html">Home</a><a href="../Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html">Intro</a></nav>
+    <button id="theme" class="icon" type="button" title="Light / Dark mode"></button>
+  </div>
+</header>
+<main class="auth"><section class="card">
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-m="login" aria-selected="true">Log in</button>
+    <button type="button" role="tab" data-m="signup" aria-selected="false">Sign up</button>
+  </div>
+  <h1 id="t"></h1><p class="muted" id="s"></p>
+  <form id="f" novalidate>
+    <label class="su">Full name<input name="name" autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Password<input name="password" type="password" required minlength="8" autocomplete="current-password"></label>
+    <button class="btn primary" id="go" type="submit"></button>
+    <p id="msg" role="status"></p>
+  </form>
+  <div class="auth-footer">
+    <a class="muted" href="index.html">← Back to home</a>
+    <a class="muted" href="../Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html">Watch Intro ▶</a>
+  </div>
+</section></main>
+<script>
+FXLogo.nav(document.getElementById('slot'));
+const $=i=>document.getElementById(i),f=$('f'),TXT={login:['Welcome back','Log in to see our signals, products and plans.','Log in'],signup:['Create your account','Sign up to unlock signals, products and plans.','Sign up']};
+let mode='login';
+function setMode(m){mode=m;document.body.classList.toggle('signup',m==='signup');
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===m));
+  [$('t').textContent,$('s').textContent,$('go').textContent]=TXT[m];$('msg').textContent='';
+  f.password.autocomplete=m==='login'?'current-password':'new-password'}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+setMode(location.hash==='#signup'?'signup':'login');
+f.onsubmit=e=>{e.preventDefault();const m=$('msg');
+  if(!f.email.checkValidity())return m.textContent='Please enter a valid email address.';
+  if(f.password.value.length<8)return m.textContent='Password must be at least 8 characters.';
+  if(mode==='signup'&&!f.name.value.trim())return m.textContent='Please enter your name.';
+  m.style.color='var(--gold)';
+  m.textContent=mode==='login'?'Logged in successfully! Redirecting...':'Account created! Redirecting...';
+  setTimeout(()=>{window.location.href='index.html';},900);
+};
+</script>
+</body>
+</html>

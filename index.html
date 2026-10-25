@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FX Traders Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  let seen = false;
+  try { seen = sessionStorage.getItem('fxIntro'); } catch(e) {}
+  if (seen) {
+    window.location.replace('Landing_Page/index.html');
+  } else {
+    window.location.replace('Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html');
+  }
+</script>
+<meta http-equiv="refresh" content="0; url='Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html'">
+<style>
+  :root {
+    --bg: #0a1224;
+    --gold: #b07d1f;
+    --text: #f4f6f9;
+    --muted: #8a94a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    text-align: center;
+    padding: 24px;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+  }
+  h1 span { color: var(--gold); }
+  p {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 0 28px;
+    max-width: 440px;
+  }
+  .actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #c9932b;
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.14);
+    transform: translateY(-1px);
+  }
+</style>
+</head>
+<body>
+  <h1>FX <span>Traders Club</span></h1>
+  <p>Connecting to experience...</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="Into%20Page/FX%20Traders%20Club%20%E2%80%93%20Logo%20Intro.html">Watch Intro &rarr;</a>
+    <a class="btn btn-secondary" href="Landing_Page/index.html">Go to Landing Page</a>
+    <a class="btn btn-secondary" href="Landing_Page/login.html">Login</a>
+  </div>
+</body>
+</html>

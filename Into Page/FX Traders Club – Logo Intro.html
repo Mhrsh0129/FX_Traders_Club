@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FX Traders Club – Logo Intro</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#0a1224;--gold:#b07d1f;--line:#d5d8de;--muted:#5b6475;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+[data-theme=dark]{--bg:#0b0f1a;--ink:#f2f4f8;--gold:#d9a441;--line:#232c44;--muted:#9aa4b8;color-scheme:dark}
+html,body{height:100%;margin:0;background:var(--bg,#fff);overflow:hidden;transition:background .3s,color .3s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;height:calc(68px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) max(20px,4vw) 0;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);opacity:0;transition:opacity .6s ease;pointer-events:none}
+.nav.visible{opacity:1;pointer-events:auto}
+.slot{display:block;height:42px}
+.right,.links{display:flex;align-items:center;gap:10px}.links{gap:26px;margin-right:12px}
+.links a{text-decoration:none;color:var(--muted);font-size:15px;font-family:Inter,system-ui,sans-serif}.links a:hover{color:var(--ink)}
+.fly-host{position:fixed;z-index:25;transform-origin:0 0;will-change:transform}
+.fly-host svg{width:100%;height:100%;display:block}
+#fx{opacity:0}
+#fxt{font:800 210px Montserrat,"Arial Black",Arial,sans-serif;fill:var(--ink);letter-spacing:-4px}
+#sig{font:400 140px "Great Vibes","Brush Script MT",cursive;fill:var(--gold);visibility:hidden}
+#sig tspan{font-size:178px}
+#sw{fill:var(--gold)}
+.st{fill:#e0a92c;opacity:0;filter:drop-shadow(0 0 3px rgba(224,169,44,.7))}
+.top-controls{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:16px;display:flex;gap:10px;z-index:35}
+.bottom-controls{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;z-index:35}
+.btn,button{font:500 13px system-ui,sans-serif;color:var(--ink);background:var(--bg,#fff);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s ease}
+.btn:hover,button:hover{color:var(--gold);border-color:var(--gold)}
+.btn-primary{background:var(--ink);color:var(--bg,#fff);border-color:var(--ink);font-weight:600}
+.btn-primary:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.ready-pulse{animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(176,125,31,.5)}50%{box-shadow:0 0 0 8px rgba(176,125,31,0)}}
+#hint{position:fixed;bottom:calc(22px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);font:13px system-ui,sans-serif;color:var(--ink);opacity:0;transition:opacity .6s;pointer-events:none;z-index:35}
+#hint.visible{opacity:.7}
+</style>
+</head>
+<body>
+<header class="nav" id="target-nav">
+  <div class="slot" id="slot" aria-label="FX Traders Club home"></div>
+  <div class="right">
+    <nav class="links">
+      <a href="../Landing_Page/index.html#services">What we do</a>
+      <a href="../Landing_Page/index.html#products">Products</a>
+      <a href="../Landing_Page/index.html#goals">Goals</a>
+    </nav>
+    <a class="btn primary" href="../Landing_Page/login.html">Login</a>
+  </div>
+</header>
+<div class="top-controls" id="top-ctrl">
+  <a class="btn" href="../Landing_Page/login.html">Login</a>
+  <a class="btn" id="skip-btn" href="../Landing_Page/index.html">Skip Intro &rarr;</a>
+</div>
+<div class="fly-host" id="lg">
+  <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="FX Traders Club">
+    <defs>
+      <linearGradient id="fe"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+      <mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="600">
+        <g id="mg">
+          <rect id="r1" x="0" y="0" width="0" height="600" fill="#fff"/>
+          <rect id="r2" y="0" width="36" height="600" fill="url(#fe)"/>
+        </g>
+      </mask>
+      <clipPath id="swc"><rect id="swr" x="0" y="300" width="0" height="200"/></clipPath>
+    </defs>
+    <g transform="translate(600 300) scale(.8) translate(-600 -318)"><g id="fxg"><g id="fx"><text id="fxt" text-anchor="middle" dominant-baseline="central">FX</text></g></g>
+    <text id="sig" text-anchor="start" mask="url(#m)"><tspan>T</tspan>raders <tspan>C</tspan>lub</text>
+    <path id="sw" clip-path="url(#swc)" d=""/>
+    <g id="sp"></g>
+    </g>
+  </svg>
+</div>
+<p id="hint">Auto-entering landing page...</p>
+<div class="bottom-controls" id="bottom-ctrl">
+  <button id="rp" type="button">↻ Replay</button>
+  <a class="btn btn-primary" id="enter-btn" href="../Landing_Page/index.html">Enter Site &rarr;</a>
+</div>
+<script>
+const $=id=>document.getElementById(id),fx=$('fx'),fxg=$('fxg'),fxt=$('fxt'),sig=$('sig'),r1=$('r1'),r2=$('r2'),mg=$('mg'),swr=$('swr');
+const host=$('lg'),slot=$('slot'),targetNav=$('target-nav'),H=42;
+const CY=290,BASE=362,F=36,GAP=40,SKEW=12;
+const STAR='M0 -1C.08 -.2 .2 -.08 1 0C.2 .08 .08 .2 0 1C-.08 .2 -.2 .08 -1 0C-.2 -.08 -.08 -.2 0 -1Z';
+const DUR=[650,170,190,260,170,150,200,260,600,220,190,280];
+let raf,B=[],cum=[0],TOT=0,RX=0,tx=0,sx=0,sw=0,SP=[];
+let isDocking=false,dockTimer=null,introFinished=false;
+const ease=u=>.5*u+.5*u*u*(3-2*u);
+
+function initHost(){
+  const w=Math.min(innerWidth*.82,860),h=w*0.5;
+  Object.assign(host.style,{width:w+'px',height:h+'px',left:((innerWidth-w)/2)+'px',top:((innerHeight-h)/2)+'px'});
+  slot.style.width=(H*2)+'px';
+  slot.style.height=H+'px';
+}
+initHost();
+addEventListener('resize',()=>{if(!isDocking)initHost();});
+
+function layout(){
+  const wf=fxt.getBBox().width;
+  sig.setAttribute('x',0);sig.setAttribute('y',BASE);
+  const ws=sig.getBBox().width,left=600-(wf+GAP+ws)/2,cx=left+wf/2;
+  fxg.setAttribute('transform','translate('+cx+' '+CY+')');
+  tx=600-cx;
+  sx=left+wf+GAP;sig.setAttribute('x',sx);sw=ws;
+  const ex=[...Array(12)].map((_,i)=>sig.getExtentOfChar(i));
+  B=ex.map(e=>e.x);B[0]-=40;B.push(ex[11].x+ex[11].width+90);
+  cum=[0];DUR.forEach((d,i)=>cum.push(cum[i]+d));TOT=cum[12];
+  RX=B[0]-300;r1.setAttribute('x',RX);
+  mg.setAttribute('transform','translate('+(Math.tan(SKEW*Math.PI/180)*BASE)+' 0) skewX(-'+SKEW+')');
+  const x1=sx+6,x2=sx+ws+30,w=x2-x1,y1=BASE+34,y2=y1-16,t=5.5;
+  const c=(a,b)=>(x1+a*w).toFixed(1)+' '+b.toFixed(1);
+  $('sw').setAttribute('d','M'+c(0,y1)+' C'+c(.3,y1+16-t)+' '+c(.7,y1+10-t)+' '+c(1,y2)+' C'+c(.7,y1+10+t)+' '+c(.3,y1+16+t)+' '+c(0,y1)+'Z');
+  swr.setAttribute('x',x1-10);swr.setAttribute('y',y2-20);swr.setAttribute('height',90);
+  const bz=f=>{const m=1-f,P=[[x1,y1],[x1+.3*w,y1+16],[x1+.7*w,y1+10],[x2,y2]];return[0,1].map(k=>m*m*m*P[0][k]+3*m*m*f*P[1][k]+3*m*f*f*P[2][k]+f*f*f*P[3][k])};
+  const sg=$('sp'),NS='http://www.w3.org/2000/svg';sg.innerHTML='';SP=[];
+  [[.28,-14,9],[.62,-18,13],[1,-6,22]].forEach(([f,dy,s])=>{const p=bz(f),a=document.createElementNS(NS,'g'),st=document.createElementNS(NS,'path');a.setAttribute('transform','translate('+p[0].toFixed(1)+' '+(p[1]+dy).toFixed(1)+')');st.setAttribute('d',STAR);st.setAttribute('class','st');a.appendChild(st);sg.appendChild(a);SP.push({el:st,f:f,s:s})});
+}
+
+function pos(t){
+  if(t<=0)return B[0];if(t>=TOT)return B[12];
+  let i=0;while(t>cum[i+1])i++;
+  const u=(t-cum[i])/DUR[i];
+  return B[i]+(B[i+1]-B[i])*ease(u);
+}
+const edge=e=>{r1.setAttribute('width',Math.max(0,e-F-RX));r2.setAttribute('x',e-F)};
+function kf(s,off,easing,blur,op,x){return{transform:'translate('+x+'px,0px) scale('+s+')',filter:'blur('+blur+'px)',opacity:op,offset:off,easing:easing}}
+
+async function zoomOutAndRedirect(url){
+  if(isDocking)return;
+  isDocking=true;
+  clearTimeout(dockTimer);
+  cancelAnimationFrame(raf);
+  const targetUrl = url || (new URLSearchParams(location.search).get('to')==='login'?'../Landing_Page/login.html':'../Landing_Page/index.html');
+  ['top-ctrl','bottom-ctrl','hint'].forEach(id=>{
+    const el=$(id);if(el){el.style.transition='opacity .3s ease';el.style.opacity='0';el.style.pointerEvents='none';}
+  });
+  targetNav.classList.add('visible');
+  const a=host.getBoundingClientRect(),s=slot.getBoundingClientRect();
+  await host.animate([
+    {transform:'none'},
+    {transform:'translate('+(s.left-a.left)+'px,'+(s.top-a.top)+'px) scale('+s.width/a.width+')'}
+  ],{
+    duration:1100,
+    easing:'cubic-bezier(.65,0,.35,1)',
+    fill:'forwards'
+  }).finished;
+  document.body.style.transition='opacity .4s ease';
+  document.body.style.opacity='0';
+  await new Promise(r=>setTimeout(r,350));
+  try{sessionStorage.setItem('fxIntro','1')}catch(e){}
+  window.location.replace(targetUrl);
+}
+
+function onIntroEnd(){
+  introFinished=true;
+  const eb=$('enter-btn'),h=$('hint');
+  if(eb)eb.classList.add('ready-pulse');
+  if(h){
+    h.textContent='Entering site... (or press Enter)';
+    h.classList.add('visible');
+  }
+  dockTimer=setTimeout(()=>{
+    zoomOutAndRedirect();
+  },550);
+}
+
+function play(){
+  cancelAnimationFrame(raf);
+  clearTimeout(dockTimer);
+  isDocking=false;
+  introFinished=false;
+  host.style.transform='none';
+  targetNav.classList.remove('visible');
+  document.body.style.opacity='1';
+  ['top-ctrl','bottom-ctrl','hint'].forEach(id=>{
+    const el=$(id);if(el){el.style.opacity='';el.style.pointerEvents='';}
+  });
+  const eb=$('enter-btn'),h=$('hint');
+  if(eb)eb.classList.remove('ready-pulse');
+  if(h)h.classList.remove('visible');
+  [fx,fxt,sig,$('sw')].forEach(n=>n.getAnimations().forEach(a=>a.cancel()));
+  SP.forEach(o=>o.el.getAnimations().forEach(a=>a.cancel()));
+  fx.animate([
+    kf(3.4,0,'cubic-bezier(.12,.9,.25,1)',18,0,tx),
+    kf(.95,.38,'ease-in-out',0,1,tx),
+    kf(1.015,.5,'ease-in-out',0,1,tx),
+    kf(1,.58,'linear',0,1,tx),
+    kf(1,.68,'cubic-bezier(.65,0,.35,1)',0,1,tx),
+    kf(1,1,'linear',0,1,0)
+  ],{duration:3000,fill:'forwards'});
+  fxt.animate([{filter:'blur(0px)'},{filter:'blur(3.5px)',offset:.5},{filter:'blur(0px)'}],{duration:960,delay:2040,easing:'ease-in-out'});
+  sig.animate([{filter:'blur(4px)'},{filter:'blur(0px)'}],{duration:900,delay:2700,easing:'ease-out',fill:'both'});
+  $('sw').animate([{filter:'blur(3px)'},{filter:'blur(0px)'}],{duration:520,delay:2700+TOT-80,easing:'ease-out',fill:'both'});
+  SP.forEach(o=>o.el.animate([{transform:'scale(0) rotate(0deg)',opacity:0},{transform:'scale('+o.s+') rotate(60deg)',opacity:1,offset:.45},{transform:'scale(0) rotate(120deg)',opacity:0}],{duration:800,delay:2700+TOT-80+520*o.f*.75,easing:'ease-in-out',fill:'both'}));
+  try{const th=localStorage.getItem('fxTheme');if(th)document.documentElement.dataset.theme=th}catch(e){}
+  const S=2700,SWD=520,T0=performance.now();
+  edge(B[0]);swr.setAttribute('width',0);sig.style.visibility='visible';
+  (function f(now){
+    const t=now-T0-S;
+    edge(pos(t));
+    const u=Math.min(1,Math.max(0,(t-(TOT-80))/SWD));
+    swr.setAttribute('width',(sw+70)*(1-Math.pow(1-u,3)));
+    if(t<TOT+SWD)raf=requestAnimationFrame(f);
+    else onIntroEnd();
+  })(T0);
+}
+
+const ready=Promise.all([document.fonts.load('800 210px Montserrat'),document.fonts.load('140px "Great Vibes"')]).catch(()=>{});
+Promise.race([ready,new Promise(r=>setTimeout(r,2500))]).then(()=>{layout();play();});
+
+$('rp').onclick=()=>{initHost();play();};
+$('enter-btn').onclick=e=>{e.preventDefault();zoomOutAndRedirect('../Landing_Page/index.html');};
+$('skip-btn').onclick=e=>{e.preventDefault();zoomOutAndRedirect('../Landing_Page/index.html');};
+document.addEventListener('click',ev=>{
+  if(introFinished&&!ev.target.closest('button, a'))zoomOutAndRedirect();
+});
+addEventListener('keydown',ev=>{
+  if(ev.code==='Space'){ev.preventDefault();initHost();play();}
+  else if(ev.code==='Enter'){ev.preventDefault();zoomOutAndRedirect();}
+});
+</script>
+</body>
+</html>
